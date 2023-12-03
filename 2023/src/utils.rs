@@ -16,17 +16,17 @@ pub fn new_aoc_day(day: &u8) -> std::io::Result<()> {
         format!(
             "use std::path::Path;
 
-use crate::utils::input_file_to_iter;
+use crate::utils::input_file_to_string_vec;
 
 pub fn part1(input: &Path) -> u8 {{
-    let lines = input_file_to_iter(input);
+    let lines = input_file_to_string_vec(input);
 
     println!(\"Day {day}, part 1 executing with lines {{:?}}\", lines);
     return 0;
 }}
 
 pub fn part2(input: &Path) -> u8 {{
-    let lines = input_file_to_iter(input);
+    let lines = input_file_to_string_vec(input);
 
     println!(\"Day {day}, part 2 executing with lines {{:?}}\", lines);
     return 0;
