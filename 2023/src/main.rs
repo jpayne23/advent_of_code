@@ -2,6 +2,7 @@ use clap::Parser;
 use std::path::Path;
 
 mod day1;
+mod day2;
 mod utils;
 
 #[derive(Parser)]
@@ -47,6 +48,14 @@ fn main() {
         }
         (1, 2) => {
             let result = day1::part2(input_path);
+            println!("Result {}", result);
+        }
+        (2, 1) => {
+            let result = day2::part1(input_path);
+            println!("Result {}", result);
+        }
+        (2, 2) => {
+            let result = day2::part2(input_path);
             println!("Result {}", result);
         }
         _ => {
