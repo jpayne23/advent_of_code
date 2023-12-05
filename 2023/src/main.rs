@@ -3,6 +3,7 @@ use std::path::Path;
 
 mod day1;
 mod day2;
+mod day3;
 mod utils;
 
 #[derive(Parser)]
@@ -56,6 +57,14 @@ fn main() {
         }
         (2, 2) => {
             let result = day2::part2(input_path);
+            println!("Result {}", result);
+        }
+        (3, 1) => {
+            let result = day3::part1(input_path);
+            println!("Result {}", result);
+        }
+        (3, 2) => {
+            let result = day3::part2(input_path);
             println!("Result {}", result);
         }
         _ => {
