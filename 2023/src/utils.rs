@@ -7,6 +7,10 @@ pub fn input_file_to_string_vec(input_path: &Path) -> Vec<String> {
     return contents.lines().map(|el| el.to_string()).collect();
 }
 
+pub fn input_file_to_string(input_path: &Path) -> String {
+    return fs::read_to_string(input_path).expect("Couldn't read file");
+}
+
 pub fn new_aoc_day(day: &u8) -> std::io::Result<()> {
     let mut file = File::create(format!("./src/day{day}.rs"))?;
 
