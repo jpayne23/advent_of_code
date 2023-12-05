@@ -233,27 +233,8 @@ pub fn part2(input: &Path) -> u32 {
                 Err(_) => panic!("Something went wrong"),
             };
 
-            // println!("Symbol found at {:?}", info);
-
             for n in info.start..info.end {
                 let temp = grid.get_all_surrounding_digits_x_y(row_number as u32, n);
-                // if temp.len() == 2 {
-                //     let mut local_total: u32 = 1;
-                //     let mut full_numbers: Vec<u32> = vec![];
-                //     for (x, y) in temp {
-                //         let full_number = grid.get_full_number(x, y);
-                //         if !full_numbers.contains(&full_number) {
-                //             println!("Full number = {}", full_number);
-                //             local_total = local_total * full_number;
-                //             full_numbers.push(full_number);
-                //         }
-                //     }
-
-                //     // println!("Local total {}", local_total);
-
-                //     total += local_total;
-                // }
-                // let mut local_total: u32 = 1;
                 let mut full_numbers: Vec<u32> = vec![];
                 for (x, y) in temp {
                     let full_number = grid.get_full_number(x, y);
