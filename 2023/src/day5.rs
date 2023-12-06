@@ -48,14 +48,14 @@ pub fn part1(input: &Path) -> i64 {
         })
         .collect::<Vec<Vec<Vec<&str>>>>();
 
-    let mut running = 0;
+    let mut running;
 
     let mut result = vec![];
 
     for s in seeds.iter() {
         running = s.parse::<i64>().unwrap();
         for map in maps.iter() {
-            let mut temp = running.clone();
+            let mut temp;
             for function in map.iter() {
                 temp = map_function(
                     running,
