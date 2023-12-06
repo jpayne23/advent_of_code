@@ -6,6 +6,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 mod utils;
 
 #[derive(Parser)]
@@ -84,6 +85,14 @@ fn main() {
         (5, 2) => {
             day5::part2(input_path);
             // println!("Result {}", result);
+        }
+        (6, 1) => {
+            let result = day6::part1(input_path);
+            println!("Result {}", result);
+        }
+        (6, 2) => {
+            let result = day6::part2(input_path);
+            println!("Result {}", result);
         }
         _ => {
             println!(
