@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { main as day1 } from "./01";
 import { main as day2 } from "./02";
+import { main as day3 } from "./03";
 
 const program = new Command();
 program
@@ -22,6 +23,9 @@ const main = async () => {
             break;
         case "2":
             await day2(part, !!test);
+            break;
+        case "3":
+            await day3(part, !!test);
             break;
 
         default:
