@@ -4,6 +4,7 @@ import { main as day2 } from "./02";
 import { main as day3 } from "./03";
 import { main as day4 } from "./04";
 import { main as day5 } from "./05";
+import { main as day6 } from "./06";
 
 const program = new Command();
 program
@@ -34,6 +35,9 @@ const main = async () => {
             break;
         case "5":
             await day5(part, !!test);
+            break;
+        case "6":
+            await day6(part, !!test);
             break;
 
         default:
