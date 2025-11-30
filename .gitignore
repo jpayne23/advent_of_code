@@ -19,3 +19,5 @@ target/
 **/node_modules
 **/data.txt
 **/output.txt
+
+**/build
