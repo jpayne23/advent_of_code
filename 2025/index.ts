@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { main as day1 } from "./01";
+import { main as day2 } from "./02";
 import { logger } from "./util/logger";
 
 const program = new Command();
@@ -19,6 +20,8 @@ const main = async () => {
     switch (day) {
         case "1":
             return await day1(part, !!test);
+        case "2":
+            return await day2(part, !!test);
         default:
             throw new Error("Invalid day specified");
     }
