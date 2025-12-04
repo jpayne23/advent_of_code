@@ -51,13 +51,26 @@ const p2 = async (filePath: string) => {
 
     instructions.reduce((acc, r) => {
         let prev = acc;
-        acc = acc + r;
+
+        let moreLoops = 0;
+        if (r > 99) {
+            moreLoops = Math.floor(r / 100);
+        }
+
+        if (r < -99) {
+            moreLoops = Math.ceil(r / 100);
+        }
+
+        acc = acc + (r - moreLoops * 100);
+
+        if (moreLoops !== 0) {
+            answer = answer + Math.abs(moreLoops);
+        }
 
         if (acc < 0) {
-            const loops = Math.floor(Math.abs(acc) / 100) + 1;
-            acc = 100 * loops + acc;
+            acc = 100 + acc;
 
-            answer = answer + loops;
+            answer = answer + 1;
 
             if (prev === 0) {
                 answer = answer - 1;
@@ -65,19 +78,14 @@ const p2 = async (filePath: string) => {
         }
 
         if (acc > 99) {
-            const loops = Math.floor(Math.abs(acc) / 100);
             const pre = acc;
-            acc = acc - 100 * loops;
+            acc = acc - 100;
 
-            answer = answer + loops;
+            answer = answer + 1;
 
             if (pre % 100 === 0) {
                 answer = answer - 1;
             }
-
-            // if (prev === 0) {
-            //     answer = answer - 1;
-            // }
         }
 
         if (acc === 0) {
@@ -87,7 +95,6 @@ const p2 = async (filePath: string) => {
         return acc;
     }, initialPosition);
 
-    // Somewhere between 6908 and 7042
     return answer;
 };
 
