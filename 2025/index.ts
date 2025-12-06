@@ -3,12 +3,13 @@ import { main as day1 } from "./01";
 import { main as day2 } from "./02";
 import { main as day3 } from "./03";
 import { main as day4 } from "./04";
+import { main as day5 } from "./05";
 import { logger } from "./util/logger";
 
 const program = new Command();
 program
-    .name("Advent of Code 2024")
-    .description("Execute any Advent of Code 2024 day and part")
+    .name("Advent of Code 2025")
+    .description("Execute any Advent of Code 2025 day and part")
     .option("-d, --day <day>", "Advent of Code day")
     .option("-p, --part <part>", "Advent of Code part")
     .option("-t, --test", "Run using test data")
@@ -28,6 +29,8 @@ const main = async () => {
             return await day3(part, !!test);
         case "4":
             return await day4(part, !!test);
+        case "5":
+            return await day5(part, !!test);
         default:
             throw new Error("Invalid day specified");
     }
