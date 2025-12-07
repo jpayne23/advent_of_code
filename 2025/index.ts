@@ -5,6 +5,7 @@ import { main as day3 } from "./03";
 import { main as day4 } from "./04";
 import { main as day5 } from "./05";
 import { main as day6 } from "./06";
+import { main as day7 } from "./07";
 import { logger } from "./util/logger";
 
 const program = new Command();
@@ -34,6 +35,8 @@ const main = async () => {
             return await day5(part, !!test);
         case "6":
             return await day6(part, !!test);
+        case "7":
+            return await day7(part, !!test);
         default:
             throw new Error("Invalid day specified");
     }
